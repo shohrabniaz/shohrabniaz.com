@@ -33,8 +33,8 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build site with Jekyll
-        # `configure-pages` provides the correct base_path for the deploy target,
-        # overriding the preview baseurl in _config.yml when needed.
+        # `configure-pages` supplies the deploy base_path (empty string once the
+        # custom domain is active, so the site is served from `/`).
         run: |
           bundle exec jekyll build \
             --baseurl "${{ steps.pages.outputs.base_path }}" \

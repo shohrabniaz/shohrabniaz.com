@@ -6,20 +6,22 @@ Platform & Cloud Security Engineer based in Adelaide, South Australia.
 
 Built with [Jekyll](https://jekyllrb.com/) and deployed to **GitHub Pages** via GitHub Actions.
 
-## Live preview
+## Live site
 
-While the custom domain is not yet registered, the site is configured to build and render as a
-GitHub Pages **project site**:
+> **https://www.shohrabniaz.com**
 
-> **https://shohrabniaz.github.io/shohrabniaz.com/**
+The repository includes a root `CNAME` file (`www.shohrabniaz.com`) and `_config.yml` is set to:
 
-There is intentionally **no `CNAME` file** committed yet — adding one before `shohrabniaz.com`
-is registered would break this preview URL.
+```yaml
+url: "https://www.shohrabniaz.com"
+baseurl: ""
+```
 
 ## Project structure
 
 ```
 .
+├── CNAME                  # www.shohrabniaz.com (GitHub Pages custom domain)
 ├── _config.yml            # Site config (url / baseurl, SEO, nav)
 ├── _data/                 # Structured content (ground truth from the CVs)
 │   ├── experience.yml     #   professional roles
@@ -34,7 +36,7 @@ is registered would break this preview URL.
 ├── assets/
 │   ├── css/main.css       # design system + light/dark themes
 │   ├── js/theme.js        # theme toggle (localStorage + system preference)
-│   ├── img/               # favicon + Open Graph image
+│   ├── img/               # favicon + Open Graph image + profile photo
 │   └── pdf/               # Academic CV + Industry CV (downloadable)
 ├── index.html             # About / Home
 ├── research.html          # Research
@@ -54,7 +56,7 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Then open **http://127.0.0.1:4000/shohrabniaz.com/**.
+Then open **http://127.0.0.1:4000/** (site is served from `/` with empty `baseurl`).
 
 To produce the static output in `_site/` without serving:
 
@@ -68,8 +70,11 @@ Every push to `main` triggers `.github/workflows/pages.yml`, which builds the si
 publishes it to GitHub Pages. In the repository settings, set **Settings → Pages → Build and
 deployment → Source** to **GitHub Actions** (one-time setup).
 
-The workflow passes GitHub Pages' resolved base path to Jekyll at build time, so the deployed URL
-stays correct whether the site is served from `/shohrabniaz.com/` (project site) or `/` (custom domain).
+Also under **Settings → Pages → Custom domain**, set `www.shohrabniaz.com` and enable
+**Enforce HTTPS** once GitHub has issued the certificate.
+
+The workflow passes GitHub Pages' resolved base path to Jekyll at build time (empty for a custom
+domain root deploy).
 
 ## Features
 
@@ -83,40 +88,15 @@ stays correct whether the site is served from `/shohrabniaz.com/` (project site)
 
 ---
 
-## Switching to the custom domain (`www.shohrabniaz.com`)
+## Cloudflare DNS (required for the custom domain)
 
-Do this **after** registering `shohrabniaz.com` on **Cloudflare Registrar**. It is a two-step change.
-
-### Step 1 — Tell the site about the new domain
-
-1. **Add a `CNAME` file** at the repository root containing exactly:
-
-   ```
-   www.shohrabniaz.com
-   ```
-
-2. **Update `_config.yml`** — change the two preview values to the custom domain:
-
-   ```yaml
-   url: "https://www.shohrabniaz.com"
-   baseurl: ""
-   ```
-
-   (Currently these are `https://shohrabniaz.github.io` and `/shohrabniaz.com` for the preview.)
-
-3. Commit and push to `main`. The Pages workflow redeploys automatically. In **Settings → Pages →
-   Custom domain**, enter `www.shohrabniaz.com` and enable **Enforce HTTPS** once the certificate
-   is issued.
-
-### Step 2 — Point Cloudflare DNS at GitHub Pages
-
-In the Cloudflare dashboard for `shohrabniaz.com`, under **DNS → Records**, add:
+`shohrabniaz.com` is registered on **Cloudflare Registrar**. Point DNS at GitHub Pages:
 
 | Type  | Name   | Content / Target               | Proxy status   |
 | ----- | ------ | ------------------------------ | -------------- |
 | CNAME | `www`  | `shohrabniaz.github.io`        | DNS only (grey)|
 
-Then make the apex (`shohrabniaz.com`) redirect to `www` so both work:
+Make the apex (`shohrabniaz.com`) redirect to `www` so both work:
 
 - Add four **A records** on the apex (`@`) pointing at GitHub Pages' IPs, **DNS only**:
   `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
@@ -132,5 +112,10 @@ Then make the apex (`shohrabniaz.com`) redirect to `www` so both work:
 > - DNS and certificate propagation can take a little time; if the custom domain shows a warning in
 >   GitHub Pages settings, wait and re-check.
 
-To revert to the preview URL, delete the `CNAME` file and restore the preview `url` / `baseurl`
-values in `_config.yml`.
+To revert to the project-site preview (`https://shohrabniaz.github.io/shohrabniaz.com/`), delete the
+`CNAME` file and restore:
+
+```yaml
+url: "https://shohrabniaz.github.io"
+baseurl: "/shohrabniaz.com"
+```
