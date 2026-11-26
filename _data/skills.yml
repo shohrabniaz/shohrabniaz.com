@@ -1,0 +1,29 @@
+# Technical stack — ground truth: Industry CV "Technical Skills" section.
+# Grouped per site brief (Cloud & IaC, Kubernetes & DevOps, Security & Forensics,
+# Backend & Observability). No tools added beyond the CV.
+
+- group: "Cloud & Infrastructure-as-Code"
+  items:
+    - "Microsoft Azure (AKS, Azure DevOps, Functions, API Management, Logic Apps, Service Bus, Event Grid, Application Gateway, Key Vault, Azure Policy, Entra ID, Azure Monitor, Application Insights, Log Analytics)"
+    - "AWS (EKS, Glue, Athena, CloudWatch, CloudTrail, CodePipeline)"
+    - "GCP"
+    - "Terraform, Terraform Cloud, Bicep, ARM templates, CloudFormation, Ansible"
+
+- group: "Kubernetes & DevOps"
+  items:
+    - "Kubernetes (AKS, EKS, self-managed), Docker, Helm"
+    - "Azure Pipelines, GitHub Actions, GitLab CI, Jenkins, Argo CD"
+    - "GitOps & multi-environment delivery"
+
+- group: "Security & Forensics"
+  items:
+    - "DevSecOps: SAST, IaC & container scanning (Semgrep, Checkov, Trivy)"
+    - "SBOM, secrets management, software supply-chain hardening"
+    - "Identity & access management (IAM), Microsoft Entra ID, Azure Policy guardrails"
+
+- group: "Backend & Observability"
+  items:
+    - "Prometheus, Grafana, ELK, Datadog, Azure Monitor, CloudWatch"
+    - "P1/P2 incident response"
+    - "Python, Go, Bash, PowerShell; REST APIs"
+    - "PostgreSQL, MySQL, MongoDB, Oracle, Snowflake"

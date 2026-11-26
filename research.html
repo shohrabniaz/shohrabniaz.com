@@ -1,0 +1,65 @@
+---
+layout: page
+permalink: /research/
+title: "Research"
+eyebrow: "Academic"
+lead: "Empirical software engineering for cloud-native security — with a focus on whether automated, LLM-generated repairs of Infrastructure-as-Code actually deploy and run, not just pass a scanner."
+---
+
+<section class="cv-section">
+  <h2>Research interests</h2>
+  <div class="grid grid-2">
+    {%- for interest in site.data.research.interests -%}
+    <div class="card"><p style="margin:0;">{{ interest }}</p></div>
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="cv-section">
+  <h2>Research projects &amp; works in progress</h2>
+  <div class="callout">
+    These are honest, in-progress research artefacts — working papers, planned studies and
+    proposals. Nothing below is peer-reviewed or published.
+  </div>
+  <div class="grid" style="margin-top:20px;">
+    {%- for work in site.data.research.works -%}
+    <article class="card dual-card research">
+      <div class="job-head">
+        <h3 class="job-role" style="margin:0;">{{ work.title }}</h3>
+        <span class="pill-status">{{ work.status }}</span>
+      </div>
+      <ul class="bullets" style="margin-top:12px;">
+        {%- for d in work.details -%}<li>{{ d }}</li>{%- endfor -%}
+      </ul>
+    </article>
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="cv-section">
+  <h2>Academic education</h2>
+  <ul class="timeline">
+    {%- for edu in site.data.research.education -%}
+    <li>
+      <div class="job-head">
+        <p class="job-role">{{ edu.degree }}</p>
+        <span class="job-dates">{{ edu.dates }}</span>
+      </div>
+      <p class="job-org">{{ edu.institution }}</p>
+      {%- if edu.details -%}
+      <ul class="job-list">
+        {%- for d in edu.details -%}<li>{{ d }}</li>{%- endfor -%}
+      </ul>
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+
+<hr class="divider">
+
+<p class="lede" style="margin:0;">
+  Interested in supervising or collaborating on IaC security, DevSecOps or empirical
+  software engineering? <a href="{{ '/contact/' | relative_url }}">Reach out</a> or download my
+  <a href="{{ site.academic_cv | relative_url }}">Academic CV (PDF)</a>.
+</p>

@@ -1,0 +1,69 @@
+# Professional experience — ground truth: Industry CV (Shohrab-Hossen-Niaz_Industry-CV.pdf)
+# and Academic CV (build.py). Do not add roles, dates, or metrics not present there.
+
+- role: "Senior DevOps Engineer (Contract)"
+  org: "Askturing.ai"
+  location: "Remote — US-based company"
+  dates: "Apr 2025 – Present"
+  note: "Concurrent remote contract"
+  highlights:
+    - "Lead end-to-end DevOps for an AI product platform: CI/CD, automation, Kubernetes and cloud security across hybrid Azure and AWS."
+    - "Migrated 15+ production services from Docker Swarm to AKS across 5 clusters / ~240 nodes, achieving ~99.95% uptime."
+    - "Designed Terraform IaC for multi-environment deployments, reducing manual provisioning effort by ~60%."
+    - "Embedded DevSecOps: automated vulnerability scanning, secrets management and secure pipeline controls."
+    - "Implemented centralised observability with ELK and Grafana, reducing mean time to detect production incidents."
+
+- role: "DevOps Engineer"
+  org: "Genex Infosys Ltd (engaged via Grameenphone)"
+  location: "Dhaka, Bangladesh"
+  dates: "Dec 2024 – Sep 2025"
+  note: "Overlapped with Askturing.ai contract"
+  highlights:
+    - "Built and maintained Jenkins and GitLab CI/CD pipelines for telecom systems serving millions of subscribers."
+    - "Developed automation scripts for infrastructure provisioning and configuration management."
+    - "Supported P1/P2 production incidents in a 24/7 environment, contributing to faster recovery and fewer repeat incidents."
+
+- role: "Senior DevOps Engineer"
+  org: "Enosis Solutions"
+  location: "Dhaka, Bangladesh"
+  dates: "Feb 2024 – Nov 2024"
+  highlights:
+    - "Led migration of legacy monolithic applications to microservices on Kubernetes, improving deployment cadence and fault isolation."
+    - "Standardised CI/CD and containerisation, shortening release lead time; mentored 20+ engineers."
+
+- role: "Senior DevOps Engineer (Contract)"
+  org: "MarginEdge"
+  location: "Remote — US-based company"
+  dates: "Jan 2024 – Mar 2024"
+  note: "Concurrent remote contract"
+  highlights:
+    - "Implemented cloud solutions across Azure, AWS and GCP for a hospitality SaaS platform; established monitoring and alerting."
+    - "Championed DevSecOps earlier in the SDLC and led containerisation adoption."
+
+- role: "Senior DevOps Engineer (Independent Contractor)"
+  org: "UnitedHealth Group"
+  location: "Remote — US-based company"
+  dates: "Aug 2022 – May 2024"
+  note: "Concurrent contract; held alongside BJIT, Enosis and MarginEdge roles"
+  highlights:
+    - "Built Azure-first infrastructure on AKS, Azure DevOps, Functions, Application Gateway and Azure Monitor for ~15 mission-critical healthcare services."
+    - "Built REST APIs and integration services with API Management, Functions, Logic Apps, Service Bus and Event Grid."
+    - "Provisioned infrastructure with Bicep/ARM; implemented identity and access with Microsoft Entra ID."
+    - "Applied secure-by-default patterns with Key Vault and Azure Policy guardrails under HIPAA-aligned controls."
+    - "Produced architecture, capacity-planning and delivery proposals for new workload onboarding."
+
+- role: "DevOps Engineer"
+  org: "BJIT Group"
+  location: "Dhaka, Bangladesh"
+  dates: "Nov 2021 – Dec 2023"
+  highlights:
+    - "Designed and managed multi-cloud environments (Azure, AWS, GCP) for enterprise clients across 7+ projects."
+    - "Built CI/CD pipelines (Azure Pipelines, Jenkins, GitLab, CodePipeline); provisioned with Terraform, Terraform Cloud and Ansible."
+    - "Primary client liaison for requirements, cost estimation and architecture design; hardened runbooks."
+
+- role: "Software Engineer"
+  org: "Adipster Tech Ltd"
+  location: "Hong Kong"
+  dates: "Apr 2020 – May 2021"
+  highlights:
+    - "Developed full-stack web applications; refactoring cut response time ~40% and raised throughput ~15%."

@@ -1,0 +1,85 @@
+# ----------------------------------------------------------------------------
+# Site settings
+# ----------------------------------------------------------------------------
+# PREVIEW (current) — GitHub Pages project site.
+# Keep these two values while previewing at:
+#   https://shohrabniaz.github.io/shohrabniaz.com/
+url: "https://shohrabniaz.github.io"
+baseurl: "/shohrabniaz.com"
+#
+# CUSTOM DOMAIN (later) — once shohrabniaz.com is registered, switch to:
+#   url: "https://www.shohrabniaz.com"
+#   baseurl: ""
+# and add the CNAME file (see README.md for the full 2-step guide).
+# ----------------------------------------------------------------------------
+
+title: "Shohrab Hossen Niaz"
+tagline: "Cyber Security researcher & Senior DevOps / Platform Engineer"
+description: >-
+  Shohrab Hossen Niaz (Niaz) — MSc Cyber Security & Forensics researcher at the
+  University of the Sunshine Coast and Senior DevOps, Platform & Cloud Security
+  Engineer in Adelaide, South Australia. Research in LLM-driven security repair
+  of Infrastructure-as-Code and cloud-native DevSecOps.
+author: "Shohrab Hossen Niaz"
+lang: en
+
+# Contact / social
+email: "shohrab.niaz@gmail.com"
+location: "Adelaide, South Australia"
+github_username: "shohrabniaz"
+linkedin_username: "shohrabniaz"
+orcid_id: "0009-0003-3036-4382"
+
+# CV downloads
+academic_cv: "assets/pdf/Shohrab-Hossen-Niaz_Academic-CV.pdf"
+industry_cv: "assets/pdf/Shohrab-Hossen-Niaz_Industry-CV.pdf"
+
+# SEO / social preview
+image: "/assets/img/og-image.png"
+twitter:
+  card: summary_large_image
+
+# Apply the social preview image to every page (jekyll-seo-tag reads page.image).
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: "/assets/img/og-image.png"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Navigation (ordered)
+nav:
+  - name: About
+    link: /
+  - name: Research
+    link: /research/
+  - name: Experience
+    link: /experience/
+  - name: Projects
+    link: /projects/
+  - name: CV
+    link: /cv/
+  - name: Contact
+    link: /contact/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - .github
+  - build.py
+  - "*.gem"
+  - uploads

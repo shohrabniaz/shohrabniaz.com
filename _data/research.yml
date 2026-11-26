@@ -1,0 +1,33 @@
+# Research — ground truth: Academic CV (build.py / Academic-CV.pdf).
+
+interests:
+  - "LLM-driven security repair of Infrastructure-as-Code (Terraform, Helm) and Kubernetes configurations"
+  - "Verification of automated repairs beyond static-analysis pass rates — deployability and runtime behaviour"
+  - "DevSecOps and software supply-chain security"
+  - "Empirical software engineering for cloud-native systems"
+
+# Manuscripts / works in progress. Honestly labelled — nothing here is published.
+works:
+  - title: "Do Scanner-Passing LLM Security Fixes Still Deploy? An Empirical Study on Terraform and Kubernetes"
+    status: "In preparation"
+    details:
+      - "Planned study: apply LLM-generated repairs to misconfigured Terraform and Kubernetes artefacts, then check whether fixes that pass static analysers (e.g. Checkov, KICS, Trivy) still validate, plan and deploy in a sandboxed cluster/cloud environment. No results yet."
+      - "Builds on LLMSecConfig (Ye, Le & Babar, MSR 2025). Discussed with Dr Triet H. M. Le and Prof M. Ali Babar (CREST, Adelaide University), 22 Oct 2026. Target venue: EASE 2027."
+
+  - title: "Verified, Cross-Layer LLM Repair of IaC Security Misconfigurations"
+    status: "Research proposal — Draft v2, Oct 2026"
+    details:
+      - "Proposes repairing misconfigurations at their root-cause layer (Terraform → Helm values → rendered manifest) with runtime verification."
+
+education:
+  - degree: "MSc Cyber Security & Forensics"
+    institution: "University of the Sunshine Coast, Australia"
+    dates: "Nov 2025 – May 2027 (expected)"
+    details:
+      - "Dissertation: JML (Joiners, Movers, Leavers) identity lifecycle automation for Microsoft Entra ID (PowerShell)."
+
+  - degree: "BSc Computer Science & Engineering"
+    institution: "North South University, Bangladesh"
+    dates: "2017 – 2021"
+    details:
+      - "GPA 3.71 / 4.00"

@@ -1,0 +1,32 @@
+# Selected projects — drawn strictly from the CVs (open-source repos + research).
+# category: engineering | devsecops | research
+
+- name: "devsecops-pipeline"
+  category: "devsecops"
+  repo: "https://github.com/shohrabniaz/devsecops-pipeline"
+  summary: "DevSecOps CI pipeline with PR security gates integrating Semgrep, Checkov and Trivy, SBOM generation and compliance reporting in GitHub Actions."
+  tags: ["GitHub Actions", "Semgrep", "Checkov", "Trivy", "SBOM", "Python"]
+
+- name: "aks-terraform-module"
+  category: "engineering"
+  repo: "https://github.com/shohrabniaz/aks-terraform-module"
+  summary: "Opinionated, reusable Terraform module for provisioning private Azure Kubernetes Service (AKS) clusters with Entra ID RBAC, Workload Identity, Azure Policy and Container Insights."
+  tags: ["Terraform", "Azure", "AKS", "Entra ID", "IaC"]
+
+- name: "ai-incident-copilot"
+  category: "engineering"
+  repo: "https://github.com/shohrabniaz/ai-incident-copilot"
+  summary: "Python CLI for Kubernetes incident root-cause analysis: gathers logs, events and pod state to produce structured, LLM-ready RCA reports."
+  tags: ["Python", "Kubernetes", "LLM", "Observability"]
+
+- name: "Do Scanner-Passing LLM Security Fixes Still Deploy?"
+  category: "research"
+  summary: "Planned empirical study applying LLM-generated repairs to misconfigured Terraform and Kubernetes artefacts, then testing whether fixes that pass static analysers (Checkov, KICS, Trivy) still validate, plan and deploy in a sandboxed cluster/cloud environment."
+  status: "In preparation — no results yet"
+  tags: ["Empirical SE", "LLM", "Terraform", "Kubernetes", "DevSecOps"]
+
+- name: "Verified, Cross-Layer LLM Repair of IaC Security Misconfigurations"
+  category: "research"
+  summary: "Research proposal to repair misconfigurations at their root-cause layer (Terraform → Helm values → rendered manifest) with runtime verification rather than static-analysis pass rates alone."
+  status: "Research proposal — Draft v2, Oct 2026"
+  tags: ["Research proposal", "IaC", "Helm", "Verification"]
