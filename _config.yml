@@ -1,17 +1,10 @@
 # ----------------------------------------------------------------------------
-# Site settings
+# Site settings — custom domain (www.shohrabniaz.com)
+# Root CNAME file points GitHub Pages at www.shohrabniaz.com.
+# See README.md for Cloudflare DNS records + apex redirect.
 # ----------------------------------------------------------------------------
-# PREVIEW (current) — GitHub Pages project site.
-# Keep these two values while previewing at:
-#   https://shohrabniaz.github.io/shohrabniaz.com/
-url: "https://shohrabniaz.github.io"
-baseurl: "/shohrabniaz.com"
-#
-# CUSTOM DOMAIN (later) — once shohrabniaz.com is registered, switch to:
-#   url: "https://www.shohrabniaz.com"
-#   baseurl: ""
-# and add the CNAME file (see README.md for the full 2-step guide).
-# ----------------------------------------------------------------------------
+url: "https://www.shohrabniaz.com"
+baseurl: ""
 
 title: "Shohrab Hossen Niaz"
 tagline: "Cyber Security researcher & Senior DevOps / Platform Engineer"
