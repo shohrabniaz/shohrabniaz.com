@@ -289,33 +289,22 @@ strong { font-weight: 600; }
 }
 .hero-photo {
   position: relative;
-  margin: 0 0 18px;
+  width: 100%;
+  max-width: 230px;
+  margin: 0 auto 18px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 16px;
   border: 1px solid var(--border);
   background: var(--bg-soft);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
 }
 .hero-photo img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 18%;
-  transform: scale(1.5);
-  transform-origin: center 16%;
+  object-position: center top;
 }
-/* Subtle gradient floor so the portrait sits cleanly on both themes. */
-.hero-photo::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 34%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.28), transparent);
-  pointer-events: none;
-}
-[data-theme="light"] .hero-photo::after { background: linear-gradient(to top, rgba(0, 0, 0, 0.12), transparent); }
 .hero-card .fact {
   display: flex;
   gap: 10px;
