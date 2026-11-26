@@ -1,0 +1,32 @@
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark">SN</span>
+      <span class="brand-text">Shohrab Hossen Niaz</span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <label for="nav-toggle" class="nav-burger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="site-nav" aria-label="Primary">
+      {%- assign cur = page.url -%}
+      {%- for item in site.nav -%}
+        {%- assign link = item.link | relative_url -%}
+        {%- assign is_active = false -%}
+        {%- if item.link == '/' and cur == '/' -%}
+          {%- assign is_active = true -%}
+        {%- elsif item.link != '/' and cur contains item.link -%}
+          {%- assign is_active = true -%}
+        {%- endif -%}
+        <a href="{{ link }}" class="nav-link{% if is_active %} is-active{% endif %}">{{ item.name }}</a>
+      {%- endfor -%}
+
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle colour theme" title="Toggle light / dark">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+      </button>
+    </nav>
+  </div>
+</header>

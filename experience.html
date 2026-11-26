@@ -1,0 +1,61 @@
+---
+layout: page
+permalink: /experience/
+title: "Experience"
+eyebrow: "Industry"
+lead: "6.5+ years of multi-cloud DevOps and platform engineering across Azure, AWS and GCP — Kubernetes, Terraform IaC, CI/CD and DevSecOps. Several roles were concurrent remote contracts, labelled as such."
+---
+
+<section class="cv-section">
+  <h2>Professional experience</h2>
+  <ul class="timeline">
+    {%- for job in site.data.experience -%}
+    <li>
+      <div class="job-head">
+        <p class="job-role">{{ job.role }}{% if job.note %}<span class="job-note">{{ job.note }}</span>{% endif %}</p>
+        <span class="job-dates">{{ job.dates }}</span>
+      </div>
+      <p class="job-org">{{ job.org }}</p>
+      <p class="job-meta">{{ job.location }}</p>
+      <ul class="job-list">
+        {%- for h in job.highlights -%}<li>{{ h }}</li>{%- endfor -%}
+      </ul>
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+
+<hr class="divider">
+
+<section class="cv-section">
+  <h2>Certifications</h2>
+  <div class="grid grid-2">
+    {%- for cert in site.data.certifications -%}
+    <div class="card" style="display:flex;gap:14px;align-items:flex-start;">
+      <div class="contact-card"><div class="ico" style="margin:0;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15l-3.5 2 1-4-3-2.5 4-.3L12 7l1.5 3.2 4 .3-3 2.5 1 4z"></path><circle cx="12" cy="12" r="9"></circle></svg>
+      </div></div>
+      <div>
+        <p style="margin:0;font-weight:600;">{{ cert.name }}</p>
+        <p style="margin:2px 0 0;color:var(--text-faint);font-size:0.9rem;">{{ cert.issuer }}</p>
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="cv-section">
+  <h2>Technical stack</h2>
+  <div class="grid grid-2">
+    {%- for group in site.data.skills -%}
+    <div class="card skill-group">
+      <h3>{{ group.group }}</h3>
+      <ul class="bullets" style="margin:0;">
+        {%- for item in group.items -%}<li>{{ item }}</li>{%- endfor -%}
+      </ul>
+    </div>
+    {%- endfor -%}
+  </div>
+</section>
