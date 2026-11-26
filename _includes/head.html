@@ -16,9 +16,60 @@
     })();
   </script>
 
+  {%- comment -%} Canonical comes from jekyll-seo-tag — do not add a second one. {%- endcomment -%}
   {%- seo -%}
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  {%- comment -%} Verified identity links for search / IndieWeb (rel=me). {%- endcomment -%}
+  <link rel="me" href="{{ site.profiles.github }}">
+  <link rel="me" href="{{ site.profiles.linkedin }}">
+  <link rel="me" href="{{ site.profiles.scholar }}">
+  <link rel="me" href="{{ site.profiles.orcid }}">
+  <link rel="me" href="{{ site.profiles.facebook }}">
+  <link rel="me" href="{{ site.profiles.instagram }}">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.shohrabniaz.com/#person",
+    "name": "Shohrab Hossen Niaz",
+    "alternateName": ["Shohrab Niaz", "Niaz", "Shohrab H. Niaz"],
+    "url": "https://www.shohrabniaz.com/",
+    "image": "https://www.shohrabniaz.com/assets/img/profile.jpg",
+    "email": "mailto:niaz@shohrabniaz.com",
+    "jobTitle": "Cyber Security Researcher & Senior DevOps / Platform Engineer",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of the Sunshine Coast"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Adelaide",
+      "addressRegion": "SA",
+      "addressCountry": "AU"
+    },
+    "knowsAbout": [
+      "Cyber Security",
+      "Cloud Security",
+      "Infrastructure as Code",
+      "DevOps",
+      "Kubernetes",
+      "AWS",
+      "Microsoft Azure",
+      "Digital Forensics"
+    ],
+    "sameAs": [
+      "https://github.com/shohrabniaz",
+      "https://www.linkedin.com/in/shohrabniaz/",
+      "https://scholar.google.com/citations?user=V3Vwc2EAAAAJ",
+      "https://orcid.org/0009-0003-3036-4382",
+      "https://www.facebook.com/angryniaz/",
+      "https://www.instagram.com/shohrabniaz/",
+      "https://shohrabniaz.github.io/"
+    ]
+  }
+  </script>
+
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">

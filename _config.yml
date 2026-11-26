@@ -23,6 +23,16 @@ github_username: "shohrabniaz"
 linkedin_username: "shohrabniaz"
 orcid_id: "0009-0003-3036-4382"
 
+# Verified public profiles (rel=me + Contact page + Person sameAs)
+profiles:
+  github: "https://github.com/shohrabniaz"
+  linkedin: "https://www.linkedin.com/in/shohrabniaz/"
+  scholar: "https://scholar.google.com/citations?user=V3Vwc2EAAAAJ"
+  orcid: "https://orcid.org/0009-0003-3036-4382"
+  facebook: "https://www.facebook.com/angryniaz/"
+  instagram: "https://www.instagram.com/shohrabniaz/"
+  github_pages: "https://shohrabniaz.github.io/"
+
 # CV downloads
 academic_cv: "assets/pdf/Shohrab-Hossen-Niaz_Academic-CV.pdf"
 industry_cv: "assets/pdf/Shohrab-Hossen-Niaz_Industry-CV.pdf"
@@ -31,6 +41,18 @@ industry_cv: "assets/pdf/Shohrab-Hossen-Niaz_Industry-CV.pdf"
 image: "/assets/img/og-image.png"
 twitter:
   card: summary_large_image
+
+# Used by jekyll-seo-tag (author / sameAs consistency with Person schema)
+social:
+  name: "Shohrab Hossen Niaz"
+  links:
+    - "https://github.com/shohrabniaz"
+    - "https://www.linkedin.com/in/shohrabniaz/"
+    - "https://scholar.google.com/citations?user=V3Vwc2EAAAAJ"
+    - "https://orcid.org/0009-0003-3036-4382"
+    - "https://www.facebook.com/angryniaz/"
+    - "https://www.instagram.com/shohrabniaz/"
+    - "https://shohrabniaz.github.io/"
 
 # Apply the social preview image to every page (jekyll-seo-tag reads page.image).
 defaults:
