@@ -37,21 +37,21 @@
 
 /* ---- Dark theme ---- */
 [data-theme="dark"] {
-  --bg: #0b1220;
-  --bg-soft: #0f172a;
-  --bg-elev: #111c33;
-  --surface: #131f38;
-  --border: #223150;
-  --border-strong: #2d3f63;
-  --text: #e8edf7;
-  --text-soft: #a9b4cc;
-  --text-faint: #8491ad;
+  --bg: #000000;
+  --bg-soft: #0a0a0a;
+  --bg-elev: #141414;
+  --surface: #0d0d0d;
+  --border: #242424;
+  --border-strong: #333333;
+  --text: #f4f4f5;
+  --text-soft: #b8b8bd;
+  --text-faint: #8a8a90;
   --accent: #6ea8fe;
-  --accent-ink: #93c0ff;
-  --accent-soft: #15233f;
+  --accent-ink: #9cc2ff;
+  --accent-soft: #171717;
   --accent-2: #4fd1c5;
-  --code-bg: #0e1a30;
-  --header-bg: rgba(11, 18, 32, 0.78);
+  --code-bg: #141414;
+  --header-bg: rgba(0, 0, 0, 0.8);
 }
 
 * { box-sizing: border-box; }
