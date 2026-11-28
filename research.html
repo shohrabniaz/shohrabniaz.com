@@ -4,6 +4,7 @@ permalink: /research/
 title: "Research"
 eyebrow: "Academic"
 lead: "Empirical software engineering for cloud-native security — with a focus on whether automated, LLM-generated repairs of Infrastructure-as-Code actually deploy and run, not just pass a scanner."
+last_modified_at: 2026-11-28
 ---
 
 <section class="cv-section">
@@ -13,6 +14,43 @@ lead: "Empirical software engineering for cloud-native security — with a focus
     <div class="card"><p style="margin:0;">{{ interest }}</p></div>
     {%- endfor -%}
   </div>
+</section>
+
+<section class="cv-section">
+  <h2>Research statement</h2>
+  <div class="card dual-card research">
+    <div class="job-head">
+      <h3 class="job-role" style="margin:0;">{{ site.data.research.research_statement.title }}</h3>
+      <span class="pill-status">{{ site.data.research.research_statement.status }}</span>
+    </div>
+    <p style="color:var(--text-soft);margin:12px 0 0;">
+      {{ site.data.research.research_statement.note }}
+      {%- if site.data.research.research_statement.path -%}
+      <br><a href="{{ site.data.research.research_statement.path | relative_url }}">Download research statement (PDF)</a>
+      {%- else -%}
+      <br><span class="text-faint">Download link will appear here once the PDF is ready.</span>
+      {%- endif -%}
+    </p>
+  </div>
+</section>
+
+<section class="cv-section">
+  <h2>Publications / In preparation</h2>
+  <div class="callout">
+    The entries below are in preparation or proposal stage. None are peer-reviewed or published.
+  </div>
+  <ul class="pub-list">
+    {%- for pub in site.data.research.publications -%}
+    <li class="pub-item">
+      <p class="pub-title">{{ pub.title }}</p>
+      <p class="pub-meta">
+        <span class="pill-status">{{ pub.status }}</span>
+        {%- if pub.venue -%}<span class="pub-venue">{{ pub.venue }}</span>{%- endif -%}
+      </p>
+      <p class="pub-note">{{ pub.note }}</p>
+    </li>
+    {%- endfor -%}
+  </ul>
 </section>
 
 <section class="cv-section">

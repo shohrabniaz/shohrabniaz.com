@@ -11,3 +11,7 @@ vendor/
 # OS / editor
 .DS_Store
 *.swp
+
+# Never commit CV source DOCX or uploads (redacted PDFs only in assets/pdf/)
+uploads/
+*.docx

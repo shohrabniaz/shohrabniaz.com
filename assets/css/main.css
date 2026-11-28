@@ -271,6 +271,21 @@ strong { font-weight: 600; }
   background: var(--accent-soft);
   border: 1px solid var(--border);
 }
+.hero-terminal {
+  margin: 0 0 16px;
+}
+.hero-terminal code {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 12px;
+  letter-spacing: 0.01em;
+}
 .hero-bio { font-size: 1.07rem; color: var(--text-soft); max-width: 58ch; }
 .hero-bio strong { color: var(--text); }
 .hero-actions {
@@ -404,6 +419,109 @@ strong { font-weight: 600; }
 }
 .news .news-text { margin: 0; color: var(--text-soft); }
 .news .news-text strong { color: var(--text); font-weight: 600; }
+
+.news-timeline {
+  position: relative;
+  padding-left: 0;
+}
+.news-timeline > li {
+  position: relative;
+  padding: 16px 0 16px 22px;
+  border-top: 0;
+  border-left: 2px solid var(--border);
+  margin-left: 6px;
+  grid-template-columns: 120px 1fr;
+}
+.news-timeline > li::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 22px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+.news-timeline > li:first-child { padding-top: 4px; }
+.news-timeline > li:first-child::before { top: 10px; }
+
+/* Certifications badge row */
+.cert-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.cert-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.cert-short {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+.cert-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.35;
+}
+.cert-issuer {
+  font-size: 0.84rem;
+  color: var(--text-faint);
+}
+
+/* Project cards */
+.project-summary {
+  color: var(--text-soft);
+  margin: 10px 0 14px;
+}
+.project-repo { margin: 14px 0 0; }
+.lang-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: var(--code-bg);
+  color: var(--text-soft);
+  border: 1px solid var(--border);
+}
+
+/* Publications list */
+.pub-list { list-style: none; padding: 0; margin: 16px 0 0; }
+.pub-item {
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+}
+.pub-item:first-child { border-top: 0; padding-top: 0; }
+.pub-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+.pub-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 0 0 6px;
+}
+.pub-venue { font-size: 0.9rem; color: var(--text-faint); }
+.pub-note { margin: 0; font-size: 0.92rem; color: var(--text-soft); }
+.text-faint { color: var(--text-faint); }
 
 /* ==========================================================================
    Experience timeline
@@ -575,8 +693,9 @@ strong { font-weight: 600; }
   .hero { padding: 48px 0 28px; }
   .hero-card { order: -1; }
   .hero-photo { max-width: 168px; }
-  .grid-2, .grid-3, .contact-grid, .stat-row { grid-template-columns: 1fr; }
+  .grid-2, .grid-3, .contact-grid, .stat-row, .cert-row { grid-template-columns: 1fr; }
   .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .news-timeline > li { grid-template-columns: 1fr; gap: 4px; }
 
   .nav-burger {
     display: inline-flex;

@@ -3,7 +3,8 @@ layout: page
 permalink: /projects/
 title: "Projects"
 eyebrow: "Selected work"
-lead: "Engineering, cloud / DevSecOps and research projects — drawn directly from my CVs. Open-source repositories live at github.com/shohrabniaz."
+lead: "Engineering, cloud / DevSecOps and research projects. Open-source entries link to individual repositories under github.com/shohrabniaz."
+last_modified_at: 2026-11-28
 ---
 
 {%- assign cats = "engineering,devsecops,research" | split: "," -%}
@@ -17,19 +18,20 @@ lead: "Engineering, cloud / DevSecOps and research projects — drawn directly f
   <h2>{{ labels[idx] }}</h2>
   <div class="grid grid-2">
     {%- for p in group -%}
-    <article class="card dual-card{% if cat == 'research' %} research{% endif %}">
+    <article class="card dual-card project-card{% if cat == 'research' %} research{% endif %}">
       <div class="job-head">
         <h3 class="job-role" style="margin:0;font-size:1.1rem;">{{ p.name }}</h3>
         {%- if p.status -%}<span class="pill-status">{{ p.status }}</span>{%- endif -%}
+        {%- if p.language -%}<span class="lang-badge">{{ p.language }}</span>{%- endif -%}
       </div>
-      <p style="color:var(--text-soft);margin:10px 0 14px;">{{ p.summary }}</p>
+      <p class="project-summary">{{ p.summary }}</p>
       {%- if p.tags -%}
       <div class="chips">{%- for t in p.tags -%}<span class="chip">{{ t }}</span>{%- endfor -%}</div>
       {%- endif -%}
       {%- if p.repo -%}
-      <p style="margin:14px 0 0;">
-        <a href="{{ p.repo }}" target="_blank" rel="noopener">
-          View repository &rarr;
+      <p class="project-repo">
+        <a href="{{ p.repo }}" target="_blank" rel="noopener noreferrer">
+          {{ p.repo | remove: "https://" }} &rarr;
         </a>
       </p>
       {%- endif -%}
@@ -42,5 +44,5 @@ lead: "Engineering, cloud / DevSecOps and research projects — drawn directly f
 
 <div class="callout" style="margin-top:8px;">
   Research entries are working papers / proposals and are not peer-reviewed or published.
-  Repository links point to my GitHub profile.
+  Where a repository link is shown, it points to that project's GitHub repository.
 </div>

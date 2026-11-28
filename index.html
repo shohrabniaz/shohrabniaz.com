@@ -2,6 +2,7 @@
 layout: default
 title: "Shohrab Hossen Niaz"
 description: "Shohrab Hossen Niaz (Niaz) — MSc Cyber Security & Forensics researcher and Senior DevOps, Platform & Cloud Security Engineer based in Adelaide, South Australia."
+last_modified_at: 2026-11-28
 ---
 
 <section class="hero">
@@ -9,6 +10,7 @@ description: "Shohrab Hossen Niaz (Niaz) — MSc Cyber Security & Forensics rese
     <div class="hero-main">
       <p class="eyebrow">Adelaide, South Australia</p>
       <h1>Shohrab Hossen Niaz</h1>
+      <p class="hero-terminal" aria-hidden="false"><code>$ kubectl apply -f secure-by-default.yaml</code></p>
       <div class="hero-roles">
         <span class="role-tag">Cyber Security &amp; Forensics Researcher</span>
         <span class="role-tag">Senior DevOps &amp; Platform Engineer</span>
@@ -39,7 +41,7 @@ description: "Shohrab Hossen Niaz (Niaz) — MSc Cyber Security & Forensics rese
 
     <aside class="hero-card">
       <figure class="hero-photo">
-        <img src="{{ '/assets/img/profile.jpg' | relative_url }}" width="960" height="960"
+        <img src="{{ '/assets/img/profile.jpg' | relative_url }}" width="720" height="720"
              alt="Portrait of Shohrab Hossen Niaz" loading="eager" decoding="async">
       </figure>
       <div class="fact">
@@ -76,6 +78,10 @@ description: "Shohrab Hossen Niaz (Niaz) — MSc Cyber Security & Forensics rese
 
 <section class="section section-soft">
   <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Two tracks</p>
+      <h2>Research and engineering</h2>
+    </div>
     <div class="grid grid-2">
       <article class="card dual-card research">
         <span class="card-kicker">Academic track</span>
@@ -107,21 +113,42 @@ description: "Shohrab Hossen Niaz (Niaz) — MSc Cyber Security & Forensics rese
 <section class="section">
   <div class="wrap">
     <div class="section-head">
+      <p class="eyebrow">Credentials</p>
+      <h2>Certifications</h2>
+    </div>
+    <div class="cert-row" role="list">
+      {%- for cert in site.data.certifications -%}
+      {%- unless cert.short == "ESMC" -%}
+      <div class="cert-badge" role="listitem">
+        <span class="cert-short">{{ cert.short }}</span>
+        <span class="cert-name">{{ cert.name }}</span>
+        <span class="cert-issuer">{{ cert.issuer }}</span>
+      </div>
+      {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
       <p class="eyebrow">Highlights</p>
       <h2>News &amp; recent activity</h2>
     </div>
-    <ul class="news">
-      {%- for item in site.data.news -%}
+    <ol class="news news-timeline">
+      {%- assign news_sorted = site.data.news | sort: "sort_key" | reverse -%}
+      {%- for item in news_sorted -%}
       <li>
         <span class="news-date">{{ item.date }}</span>
         <p class="news-text">{{ item.text | markdownify | remove: '<p>' | remove: '</p>' }}</p>
       </li>
       {%- endfor -%}
-    </ul>
+    </ol>
   </div>
 </section>
 
-<section class="section section-soft">
+<section class="section">
   <div class="wrap">
     <div class="stat-row">
       <div class="stat"><div class="num">6.5+ yrs</div><div class="lbl">DevOps &amp; cloud engineering</div></div>

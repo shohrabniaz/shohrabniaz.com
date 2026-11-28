@@ -1,4 +1,4 @@
-# Research — ground truth: Academic CV (build.py / Academic-CV.pdf).
+# Research — ground truth: Academic CV. Do not invent publications or results.
 
 interests:
   - "LLM-driven security repair of Infrastructure-as-Code (Terraform, Helm) and Kubernetes configurations"
@@ -18,6 +18,26 @@ works:
     status: "Research proposal — Draft v2, Oct 2026"
     details:
       - "Proposes repairing misconfigurations at their root-cause layer (Terraform → Helm values → rendered manifest) with runtime verification."
+
+# Publications / in preparation — same works, listed for PhD-facing clarity.
+# All entries are NOT peer-reviewed.
+publications:
+  - title: "Do Scanner-Passing LLM Security Fixes Still Deploy? An Empirical Study on Terraform and Kubernetes"
+    venue: "Target venue: EASE 2027"
+    status: "In preparation"
+    note: "Not peer-reviewed. Working study; no results yet."
+
+  - title: "Verified, Cross-Layer LLM Repair of IaC Security Misconfigurations"
+    venue: "Research proposal"
+    status: "Draft v2, Oct 2026"
+    note: "Not peer-reviewed. Proposal artefact only."
+
+# Research statement PDF slot — file not authored yet (TODO for Niaz).
+research_statement:
+  title: "Research Statement"
+  status: "Placeholder"
+  path: null
+  note: "PDF not yet available — to be added by Niaz."
 
 education:
   - degree: "MSc Cyber Security & Forensics"
