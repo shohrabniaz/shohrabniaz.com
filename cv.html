@@ -3,7 +3,8 @@ layout: page
 permalink: /cv/
 title: "Curriculum Vitae"
 eyebrow: "CV"
-lead: "A web summary of my education, experience, certifications and honours. Download the full PDFs below — Academic for research / PhD applications, Industry for engineering roles."
+lead: "A short web summary for quick scanning. Full detail lives in the PDFs and on the Experience and Research pages."
+last_modified_at: 2026-11-28
 ---
 
 <div class="download-bar">
@@ -26,15 +27,16 @@ lead: "A web summary of my education, experience, certifications and honours. Do
       <span class="job-dates">{{ edu.dates }}</span>
     </div>
     <p class="job-org">{{ edu.institution }}</p>
-    {%- if edu.details -%}
-    <ul class="job-list">{%- for d in edu.details -%}<li>{{ d }}</li>{%- endfor -%}</ul>
-    {%- endif -%}
   </div>
   {%- endfor -%}
 </section>
 
 <section class="cv-section">
-  <h2>Professional experience</h2>
+  <h2>Experience snapshot</h2>
+  <p style="color:var(--text-soft);margin:0 0 14px;">
+    Condensed roles — full highlights on the
+    <a href="{{ '/experience/' | relative_url }}">Experience</a> page.
+  </p>
   {%- for job in site.data.experience -%}
   <div class="cv-entry">
     <div class="job-head">
@@ -42,7 +44,6 @@ lead: "A web summary of my education, experience, certifications and honours. Do
       <span class="job-dates">{{ job.dates }}</span>
     </div>
     <p class="job-meta">{{ job.location }}</p>
-    <ul class="job-list">{%- for h in job.highlights -%}<li>{{ h }}</li>{%- endfor -%}</ul>
   </div>
   {%- endfor -%}
 </section>

@@ -16,17 +16,34 @@
     })();
   </script>
 
-  {%- comment -%} Canonical comes from jekyll-seo-tag — do not add a second one. {%- endcomment -%}
-  {%- seo -%}
+  {%- comment -%}
+    Capture jekyll-seo-tag output and strip twitter:site / twitter:creator.
+    There is no X/Twitter handle in site config; the plugin would otherwise emit
+    twitter:site as "@" (empty username) and twitter:creator as "@{{ author }}".
+  {%- endcomment -%}
+  {%- capture seo_output -%}{%- seo -%}{%- endcapture -%}
+  {%- comment -%}
+    Strip broken twitter tags (no X handle) and undo jekyll-seo-tag's
+    xml_escape+jsonify double-encoding of "&" inside JSON-LD (\u0026amp; → \u0026).
+  {%- endcomment -%}
+  {{ seo_output
+       | replace: '<meta name="twitter:site" content="@" />', ''
+       | replace: '<meta name="twitter:creator" content="@Shohrab Hossen Niaz" />', ''
+       | replace: '<meta name="twitter:site" content="@">', ''
+       | replace: '<meta name="twitter:creator" content="@Shohrab Hossen Niaz">', ''
+       | replace: '\u0026amp;', '\u0026'
+  }}
 
   {%- comment -%} Verified identity links for search / IndieWeb (rel=me). {%- endcomment -%}
   <link rel="me" href="{{ site.profiles.github }}">
   <link rel="me" href="{{ site.profiles.linkedin }}">
   <link rel="me" href="{{ site.profiles.scholar }}">
   <link rel="me" href="{{ site.profiles.orcid }}">
-  <link rel="me" href="{{ site.profiles.facebook }}">
-  <link rel="me" href="{{ site.profiles.instagram }}">
 
+  {%- comment -%}
+    Person JSON-LD: use a Liquid-built string so "&" is not HTML-escaped to "&amp;"
+    inside the JSON (which would make the JSON invalid / double-escaped).
+  {%- endcomment -%}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,7 +54,7 @@
     "url": "https://www.shohrabniaz.com/",
     "image": "https://www.shohrabniaz.com/assets/img/profile.jpg",
     "email": "mailto:niaz@shohrabniaz.com",
-    "jobTitle": "Cyber Security Researcher & Senior DevOps / Platform Engineer",
+    "jobTitle": {{ "Cyber Security Researcher & Senior DevOps / Platform Engineer" | jsonify }},
     "affiliation": {
       "@type": "CollegeOrUniversity",
       "name": "University of the Sunshine Coast"
@@ -62,16 +79,14 @@
       "https://github.com/shohrabniaz",
       "https://www.linkedin.com/in/shohrabniaz/",
       "https://scholar.google.com/citations?user=V3Vwc2EAAAAJ",
-      "https://orcid.org/0009-0003-3036-4382",
-      "https://www.facebook.com/angryniaz/",
-      "https://www.instagram.com/shohrabniaz/",
-      "https://shohrabniaz.github.io/"
+      "https://orcid.org/0009-0003-3036-4382"
     ]
   }
   </script>
 
-  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap">

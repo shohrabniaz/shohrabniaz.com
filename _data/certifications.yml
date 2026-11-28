@@ -1,13 +1,17 @@
 # Certifications — only verified entries present in the CVs. Do not add others.
 
 - name: "Certified Kubernetes Administrator (CKA)"
+  short: "CKA"
   issuer: "CNCF / The Linux Foundation"
 
 - name: "Microsoft Certified: Azure Administrator Associate (AZ-104)"
+  short: "AZ-104"
   issuer: "Microsoft"
 
 - name: "AWS Certified Cloud Practitioner"
+  short: "AWS CP"
   issuer: "Amazon Web Services"
 
 - name: "Expert Scrum Master Certified (ESMC)"
+  short: "ESMC"
   issuer: "Scrum certification body"

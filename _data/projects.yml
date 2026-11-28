@@ -1,23 +1,55 @@
-# Selected projects — drawn strictly from the CVs (open-source repos + research).
+# Selected projects — drawn from CVs and public GitHub repo descriptions only.
 # category: engineering | devsecops | research
+# language / summary for OSS entries taken from each repo's GitHub description / README.
+
+- name: "shipguard-iac"
+  category: "devsecops"
+  repo: "https://github.com/shohrabniaz/shipguard-iac"
+  language: "JavaScript"
+  summary: "Codegeist 2026 Forge app — verified LLM repair of Terraform/Kubernetes security issues for Jira + Rovo."
+  tags: ["Forge", "Jira", "Rovo", "Terraform", "Kubernetes", "LLM"]
+
+- name: "ease-bot"
+  category: "devsecops"
+  repo: "https://github.com/shohrabniaz/ease-bot"
+  language: "Python"
+  summary: "GitHub Action: verified LLM fixes for Terraform & Kubernetes misconfigurations as PR suggestions (Checkov+Trivy, terraform validate, kubeconform)."
+  tags: ["GitHub Actions", "Checkov", "Trivy", "Terraform", "Kubernetes", "LLM"]
+
+- name: "ease-bot-demo"
+  category: "devsecops"
+  repo: "https://github.com/shohrabniaz/ease-bot-demo"
+  language: "HCL"
+  summary: "Live demo of EASE-Bot on a pull request with deliberately insecure Terraform/Kubernetes (do not deploy)."
+  tags: ["Demo", "Terraform", "Kubernetes"]
 
 - name: "devsecops-pipeline"
   category: "devsecops"
   repo: "https://github.com/shohrabniaz/devsecops-pipeline"
+  language: "Python"
   summary: "DevSecOps CI pipeline with PR security gates integrating Semgrep, Checkov and Trivy, SBOM generation and compliance reporting in GitHub Actions."
   tags: ["GitHub Actions", "Semgrep", "Checkov", "Trivy", "SBOM", "Python"]
 
 - name: "aks-terraform-module"
   category: "engineering"
   repo: "https://github.com/shohrabniaz/aks-terraform-module"
+  language: "HCL"
   summary: "Opinionated, reusable Terraform module for provisioning private Azure Kubernetes Service (AKS) clusters with Entra ID RBAC, Workload Identity, Azure Policy and Container Insights."
   tags: ["Terraform", "Azure", "AKS", "Entra ID", "IaC"]
 
 - name: "ai-incident-copilot"
   category: "engineering"
   repo: "https://github.com/shohrabniaz/ai-incident-copilot"
+  language: "Python"
   summary: "Python CLI for Kubernetes incident root-cause analysis: gathers logs, events and pod state to produce structured, LLM-ready RCA reports."
   tags: ["Python", "Kubernetes", "LLM", "Observability"]
+
+- name: "jml-identity-lifecycle-automation"
+  category: "research"
+  repo: "https://github.com/shohrabniaz/jml-identity-lifecycle-automation"
+  language: "Python"
+  summary: "Joiner-mover-leaver identity lifecycle automation for SME MSP (Entra ID Free lab)."
+  tags: ["Entra ID", "PowerShell", "Identity", "JML", "Dissertation"]
 
 - name: "Do Scanner-Passing LLM Security Fixes Still Deploy?"
   category: "research"
